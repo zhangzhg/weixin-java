@@ -32,7 +32,7 @@ public class LoginController {
 
     @RequestMapping(value = "", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
-    public ResultData login(LoginDto login, HttpServletRequest request) {
+    public ResultData login(LoginDto login) {
         ResultData result = new ResultData();
         result.put("success", true);
         try {
