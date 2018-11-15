@@ -25,17 +25,17 @@ public class UserController {
     @ResponseBody
     public ResultData list(int page, int size, String name) {
         ResultData result = new ResultData();
-        result.put("success", true);
         try {
             PageRequest pageable = new PageRequest(page-1, size);
             Page<SysUser> users = userService.list(pageable, name);
             PageResult pageResult = new PageResult(users.getContent(), users.getTotalElements(), size, page);
             result.put("pageResult", pageResult);
         } catch (BusinessException e) {
-            result.put("success", false);
-            result.put("msg", e.getMsg());
+            result.failure(e.getMsg());
         }
 
         return result;
     }
+
+
 }

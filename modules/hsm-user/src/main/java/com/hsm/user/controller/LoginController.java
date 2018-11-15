@@ -34,7 +34,6 @@ public class LoginController {
     @ResponseBody
     public ResultData login(LoginDto login) {
         ResultData result = new ResultData();
-        result.put("success", true);
         try {
             SysUser user = userService.login(login.getUsername(), login.getPassword());
             String token = UUIDUtils.generate();
@@ -51,8 +50,7 @@ public class LoginController {
             result.put("token", token);
             result.put("user", user);
         } catch (BusinessException e) {
-            result.put("msg", e.getMsg());
-            result.put("success", false);
+            result.failure(e.getMsg());
         }
 
         return result;
