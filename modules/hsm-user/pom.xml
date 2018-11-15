@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.hsm</groupId>
+        <artifactId>hsm-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>hsm-user</artifactId>
+    <packaging>jar</packaging>
+    <properties>
+        <shiro.version>1.4.0</shiro.version>
+        <framework.version>1.0.0.RC1</framework.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hsm</groupId>
+            <artifactId>hsm-user-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hsm</groupId>
+            <artifactId>framework-user</artifactId>
+            <version>${framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+    </dependencies>
+</project>
