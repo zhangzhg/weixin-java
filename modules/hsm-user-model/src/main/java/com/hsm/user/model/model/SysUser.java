@@ -9,11 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
 @Table(name="sys_user")
 @Where(clause="status > '0'")
-public class SysUser extends BaseModel {
+public class SysUser extends BaseModel implements Serializable {
     @Column
     private String account;
     @Column

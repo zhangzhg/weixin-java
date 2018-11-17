@@ -9,4 +9,8 @@ public interface IUserService {
     SysUser login(String username, String password);
 
     Page<SysUser> list(PageRequest pageable, String name);
+
+    void save(SysUser user);
+
+    void delete(String id);
 }
